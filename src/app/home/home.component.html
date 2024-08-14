@@ -1,41 +1,11 @@
-<p [ngClass]="'cessssssssss'">home works!</p>
-<!-- <input
-  [ngModel]="currentItem.name"
-  (ngModelChange)="setUppercaseName($event)"
-  id="example-uppercase"
-/> -->
-
-<p (click)="titClick()">{{ title }}</p>
-<img [src]="imgurl" />
-
-<ul>
-  @for (customer of arr; track customer) {
-  <li>{{ customer }}</li>
-  }
-</ul>
-
-@if (a > b) {
-<p>6666a</p>
-} @else {
-<p>88888</p>
-}
-
-<hr />
-
-@switch (sw) { @case ('a') {
-<p>i am a</p>
-} @case ('b') {
-<p>i am b</p>
-} @default {
-<p>ccccccc</p>
-} }
-
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  <label for="first-name">First Name: </label>
-  <input id="first-name" type="text" formControlName="firstName" />
-  <label for="last-name">Last Name: </label>
-  <input id="last-name" type="text" formControlName="lastName" />
-
-  {{ !profileForm.valid }}
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+<form>
+  <input type="text" placeholder="Filter by city" />
+  <button class="primary" type="button">Search</button>
 </form>
+<section class="results">
+  <app-housing-location
+    [abcccccccccc]="housingLocation"
+    (emitPar)="addItem($event)"
+  ></app-housing-location>
+</section>
+<div contentEditable="false"></div>

@@ -1,39 +1,29 @@
-import { NgClass } from '@angular/common'
-import { Component } from '@angular/core'
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
+import { Component } from '@angular/core';
+import { HousingLocationComponent } from '../housing-location/housing-location.component';
+import { HousingLocation } from '../housinglocation';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass, ReactiveFormsModule],
+  imports: [HousingLocationComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  currentItem: any
-  title = 'click me'
-  imgurl = 'http://'
-  arr = [1, 3, 4]
-
-  a = 5
-  b = 2
-
-  sw = 'b'
-
-  titClick = () => {
-    console.log(666)
-    this.title = 'hhhha'
+  readonly baseUrl = 'https://angular.dev/assets/tutorials/common'
+  housingLocation: HousingLocation = {
+    id: 9999,
+    name: 'Test Home',
+    city: 'Test city',
+    state: 'ST',
+    photo: `${this.baseUrl}/example-house.jpg`,
+    availableUnits: 99,
+    wifi: true,
+    laundry: false
   }
 
-  profileForm = new FormGroup({
-    firstName: new FormControl('a'),
-    lastName: new FormControl('b')
-  })
-
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.log(this.profileForm.value);
-
-    // this.profileForm.firstName.setValue('bbb')
+  addItem(e:number) {
+    console.log(e,'fk')
   }
 }
