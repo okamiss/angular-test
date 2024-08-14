@@ -1,11 +1,11 @@
 import { NgClass } from '@angular/common'
 import { Component } from '@angular/core'
-import { FormControl } from '@angular/forms'
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -25,5 +25,15 @@ export class HomeComponent {
     this.title = 'hhhha'
   }
 
-  name = new FormControl('')
+  profileForm = new FormGroup({
+    firstName: new FormControl('a'),
+    lastName: new FormControl('b')
+  })
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.log(this.profileForm.value);
+
+    // this.profileForm.firstName.setValue('bbb')
+  }
 }
