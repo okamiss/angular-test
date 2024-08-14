@@ -1,10 +1,17 @@
-import { Component } from '@angular/core'
-import { FormsModule } from '@angular/forms'
+import { Component, inject } from '@angular/core'
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms'
+// import { CarService } from '../car.service'
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -16,4 +23,19 @@ export class UserComponent {
   showFramework() {
     console.log(this.favoriteFramework)
   }
+
+  // --------------表单------------------
+
+  profileForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email])
+  })
+
+  handleSubmit() {
+    console.log(this.profileForm.value)
+  }
+
+  // --------------inject注入------------------
+
+  // carService = inject(CarService)
 }
