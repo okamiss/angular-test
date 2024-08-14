@@ -1,1 +1,36 @@
-<p>home works!</p>
+<p [ngClass]="'cessssssssss'">home works!</p>
+<!-- <input
+  [ngModel]="currentItem.name"
+  (ngModelChange)="setUppercaseName($event)"
+  id="example-uppercase"
+/> -->
+
+<p (click)="titClick()">{{ title }}</p>
+<img [src]="imgurl" />
+
+<ul>
+  @for (customer of arr; track customer) {
+  <li>{{ customer }}</li>
+  }
+</ul>
+
+@if (a > b) {
+<p>6666a</p>
+} @else {
+<p>88888</p>
+}
+
+<hr />
+
+@switch (sw) { @case ('a') {
+<p>i am a</p>
+} @case ('b') {
+<p>i am b</p>
+} @default {
+<p>ccccccc</p>
+} }
+
+
+<!-- 
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name"> -->
