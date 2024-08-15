@@ -4,10 +4,22 @@ import { DecimalPipe, DatePipe, CurrencyPipe } from '@angular/common'
 // 自定义管道
 import { ReversePipe } from './diyPain'
 
+import { MatIconModule } from '@angular/material/icon'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatButtonModule } from '@angular/material/button'
+
 @Component({
   selector: 'app-guandao',
   standalone: true,
-  imports: [DecimalPipe, DatePipe, CurrencyPipe, ReversePipe],
+  imports: [
+    DecimalPipe,
+    DatePipe,
+    CurrencyPipe,
+    ReversePipe,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule
+  ],
   templateUrl: './guandao.component.html',
   styleUrl: './guandao.component.css'
 })
